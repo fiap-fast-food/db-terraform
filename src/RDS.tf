@@ -1,3 +1,11 @@
+resource "aws_security_group_rule" "allow_all_ingress" {
+  type              = "ingress"
+  from_port         = 5432
+  to_port           = 5432
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]  
+  security_group_id = aws_security_group.db.id 
+}
 resource "aws_db_instance" "default" {
   allocated_storage      = 10
   db_name                = "fiapfastfood"
