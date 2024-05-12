@@ -1,5 +1,5 @@
 provider "aws" {
-  region = var.aws_region
+  region = "us-east-2"
 }
 
 resource "aws_db_instance" "default" {
