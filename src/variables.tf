@@ -1,45 +1,29 @@
-variable "aws_region" {
-  description = "AWS region"
-  type        = string
-  default = "us-east-2"
-}
-
-variable "db_instance_identifier" {
-  description = "Identifier for the RDS instance"
+variable "vpc_name" {
+  description = "Nome da VPC"
   type        = string
 }
 
-variable "db_instance_class" {
-  description = "Instance class for the RDS instance"
+variable "vpc_cidr" {
+  description = "CIDR block para a VPC"
   type        = string
 }
 
-variable "db_engine_version" {
-  description = "Engine version for the RDS instance"
-  type        = string
+variable "vpc_azs" {
+  description = "Zonas de disponibilidade para a VPC"
+  type        = list(string)
 }
 
-variable "db_allocated_storage" {
-  description = "Allocated storage for the RDS instance (in GB)"
-  type        = number
+variable "vpc_private_subnets" {
+  description = "Subnets privadas para a VPC"
+  type        = list(string)
 }
 
-variable "db_publicly_accessible" {
-  description = "Whether the RDS instance should be publicly accessible"
-  type        = bool
+variable "vpc_public_subnets" {
+  description = "Subnets públicas para a VPC"
+  type        = list(string)
 }
 
-variable "db_name" {
-  description = "Name of the database"
-  type        = string
-}
-
-variable "db_username" {
-  description = "Username for accessing the database"
-  type        = string
-}
-
-variable "db_password" {
-  description = "Password for accessing the database"
-  type        = string
+variable "vpc_tags" {
+  description = "Tags adicionais para a VPC"
+  type        = map(string)
 }
