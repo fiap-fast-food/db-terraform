@@ -1,6 +1,7 @@
 resource "aws_security_group" "db" {
-  name   = "db_ECS"
-  vpc_id = module.vpc.vpc_id
+  name        = "db-security-group"
+  description = "Security group for RDS"
+  vpc_id      = module.vpc.vpc_id 
 }
 
 resource "aws_security_group_rule" "tcp_db" {
